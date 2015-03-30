@@ -47,7 +47,9 @@ namespace iExpress
             this.Suspending += this.OnSuspending;
 
 
-            ParseClient.Initialize("GwYPxahcJTgeDwigA7qQLev7zJuGsSN2idpqPZhu", "zKTrXbRjqptsgKMDdaPh2lCdnwiUT9rcVKYQ1pKI");
+            //ParseClient.Initialize("GwYPxahcJTgeDwigA7qQLev7zJuGsSN2idpqPZhu", "zKTrXbRjqptsgKMDdaPh2lCdnwiUT9rcVKYQ1pKI");
+            ParseClient.Initialize("k3vfCLFm76FWAqBJcZLroVEUulsrBFYE3WMXCBJo", "uhLgqUkU6pJSZ8Cf165V1LoiooRqUvUI1IVPN1X1");
+
         }
 
         protected override void OnWindowCreated(WindowCreatedEventArgs args)

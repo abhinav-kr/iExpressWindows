@@ -2,8 +2,6 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="DefaultViewModel" />
-    <RootPropertyPathName Name="NavigationHelper" />
-    <RootPropertyPathName Name="GoBackCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -31,6 +29,7 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
       <RootProperty Name="Margin" />
@@ -48,15 +47,21 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="BorderThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
       <RootEvent Name="Click" />
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
@@ -70,7 +75,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
-      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
     <RootType FullName="System.String" />
@@ -80,13 +84,10 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="ColumnDefinitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
-      <RootMethod Name="GetColumn" />
-      <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
@@ -103,16 +104,15 @@
       <RootMethod Name="GetLeft" />
       <RootMethod Name="SetLeft" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.FlyoutBase">
+      <RootMethod Name="GetAttachedFlyout" />
+      <RootMethod Name="SetAttachedFlyout" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
-      <RootMethod Name="GetName" />
-      <RootMethod Name="SetName" />
-      <RootMethod Name="GetAutomationId" />
-      <RootMethod Name="SetAutomationId" />
-      <RootMethod Name="GetItemType" />
-      <RootMethod Name="SetItemType" />
+    <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout" />
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontWeight" />
     </RootType>
     <RootType FullName="iExpress.MainPage" />
   </Roots.RootTypes>

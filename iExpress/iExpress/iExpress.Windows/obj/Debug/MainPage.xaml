@@ -48,23 +48,24 @@
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout/>
             </FlyoutBase.AttachedFlyout>
-            <Button x:ConnectionId='1' x:Name="b1" Content="!! EMERGENCY !!" Width="200" Height="200"                                                                                      Canvas.Top="250" Canvas.Left="61" FontSize="18"  />
-            <Button x:ConnectionId='2' x:Name="b3" Content="BATHROOM"  Width="200" Height="200"                                                                                      Canvas.Left="61" Canvas.Top="32" FontSize="18" />
-            <Button x:ConnectionId='3' x:Name="b2" Content="HUNGRY"  Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="32" FontSize="18"/>
-            <Button x:ConnectionId='4' x:Name="b4" Content="Yes  :)"  Width="200" Height="200"                                                                                       Canvas.Left="61" Canvas.Top="465" FontSize="18"/>
-            <Button x:ConnectionId='5' x:Name="b5" Content="No  :("  Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="465" FontSize="18"/>
-            <Button x:ConnectionId='6' x:Name="b6" Content="LET'S TALK"  Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="250" FontSize="18"/>
+            <Button x:ConnectionId='1' x:Name="b1" Content="!! Emergency !!" Width="200" Height="200"                                                                                      Canvas.Top="252" Canvas.Left="61" FontSize="18"  />
+            <Button x:ConnectionId='2' x:Name="b3" Content="Bathroom"  Width="200" Height="200"                                                                                      Canvas.Left="61" Canvas.Top="32" FontSize="18" />
+            <Button x:ConnectionId='3' x:Name="b2" Content="Hungry"  Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="32" FontSize="18"/>
+            <Button x:ConnectionId='4' x:Name="b4" Content="Yes :)"  Width="200" Height="200"                                                                                       Canvas.Left="61" Canvas.Top="465" FontSize="18"/>
+            <Button x:ConnectionId='5' x:Name="b5" Content="No :(" Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="465" FontSize="18"/>
+            <Button x:ConnectionId='6' x:Name="b6" Content="Let's Talk"  Width="200" Height="200"                                                                                       Canvas.Left="290" Canvas.Top="252" FontSize="18"/>
 
-
-
-            <StackPanel Orientation="Vertical" Canvas.Left="64" Canvas.Top="697" Height="100" Width="423">
-                <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="50" FontSize="20"/>
-                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="50" FontSize="20"/>
+            <StackPanel Orientation="Vertical" Canvas.Left="64" Canvas.Top="697" Height="200" Width="423">
+                <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFBC290E" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
+                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
             </StackPanel>
-
-
+            <Button x:ConnectionId='7' x:Name="b3_Copy" Content="Turn Lights On"  Width="200" Height="200"                                                                                      Canvas.Left="703" Canvas.Top="32" FontSize="18" />
+            <Button x:ConnectionId='8' x:Name="b3_Copy1" Content="Turn Lights Off"  Width="200" Height="200"                                                                                      Canvas.Left="939" Canvas.Top="32" FontSize="18" />
+            <Button x:ConnectionId='9' x:Name="b3_Copy2" Content="Decrease Light&#xD;&#xA;Intensity"  Width="200" Height="200"                                                                                      Canvas.Left="939" Canvas.Top="252" FontSize="18" />
+            <Button x:ConnectionId='10' x:Name="b3_Copy3" Content="Increase Light &#xD;&#xA;Intensity"  Width="200" Height="200"                                                                                      Canvas.Left="703" Canvas.Top="252" FontSize="18"                        />
+            <Button x:ConnectionId='11' x:Name="b3_Copy4" Content="Increase&#xD;&#xA;Temperature&#xD;&#xA;"  Width="200" Height="200"                                                                                      Canvas.Left="703" Canvas.Top="465" FontSize="18"                        />
+            <Button x:ConnectionId='12' x:Name="b3_Copy5" Content="Decrease&#xD;&#xA;Temperature&#xD;&#xA;"  Width="200" Height="200"                                                                                      Canvas.Left="939" Canvas.Top="465" FontSize="18" />
         </Canvas>
-
 
     </Grid>
 </Page>

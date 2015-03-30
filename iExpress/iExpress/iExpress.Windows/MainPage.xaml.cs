@@ -78,10 +78,6 @@ namespace iExpress
         public MainPage()
         {
 
-
-
-
-
             GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
             GazeManager.Instance.AddGazeListener(this);
             // Add listener if EyeTribe Server is closed
@@ -232,27 +228,40 @@ namespace iExpress
                         UserName = "Patient";
 
                     Debug.WriteLine("Trigger execution!!!!!!!!");
-                    (sender as Windows.UI.Xaml.Controls.Button).Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
-                    Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
-                    String message = but.Content.ToString();
 
-                    ParsePush push = new ParsePush();
-                    push.Channels = new List<String> { "global" };
-                    IDictionary<string, object> dic = new Dictionary<string, object>();
-                    dic.Add("sound", ".");
-                    dic.Add("alert", UserName + ": " + message);
-                   // dic.Add("time", UserName);
-                    push.Data = dic;
-                    push.SendAsync();
+                    if ((sender as Windows.UI.Xaml.Controls.Button).Content.ToString() == "Hungry")
+                    {
+                        //Frame.Navigate(typeof(HomeAutomation), null);
+                        
+                        
+                        //Frame.Navigate(typeof(HomeAutomation), null);
+                                  
+                    }
+                    else
+                    {
+
+                        (sender as Windows.UI.Xaml.Controls.Button).Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
+                        Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
+                        String message = but.Content.ToString();
+
+                        ParsePush push = new ParsePush();
+                        push.Channels = new List<String> { "global" };
+                        IDictionary<string, object> dic = new Dictionary<string, object>();
+                        dic.Add("sound", ".");
+                        dic.Add("alert", UserName + ": " + message);
+                        // dic.Add("time", UserName);
+                        push.Data = dic;
+                        push.SendAsync();
 
 
-                    ParseObject internal_tweets = new ParseObject("TweetsInternal");
-                    internal_tweets["content"] = message;
-                    internal_tweets["sender"] = UserName;
-                    internal_tweets.SaveAsync();
+                        ParseObject internal_tweets = new ParseObject("TweetsInternal");
+                        internal_tweets["content"] = message;
+                        internal_tweets["sender"] = UserName;
+                        internal_tweets.SaveAsync();
 
-                    entered = false;
-                    exited = true;
+                        entered = false;
+                        exited = true;
+                    }
 
                 }
             }
@@ -428,6 +437,16 @@ namespace iExpress
                     
                
             
+        }
+
+        private void b3_Copy3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b3_Copy4_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
 

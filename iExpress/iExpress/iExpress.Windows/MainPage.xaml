@@ -59,6 +59,12 @@
                 <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFBC290E" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
                 <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
             </StackPanel>
+            <Button x:Name="b3_Copy" Content="Turn Lights On"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="703" Canvas.Top="32" FontSize="18" />
+            <Button x:Name="b3_Copy1" Content="Turn Lights Off"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="939" Canvas.Top="32" FontSize="18" />
+            <Button x:Name="b3_Copy2" Content="Decrease Light&#xD;&#xA;Intensity"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="939" Canvas.Top="252" FontSize="18" />
+            <Button x:Name="b3_Copy3" Content="Increase Light &#xD;&#xA;Intensity"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="703" Canvas.Top="252" FontSize="18" Click="b3_Copy3_Click" />
+            <Button x:Name="b3_Copy4" Content="Increase&#xD;&#xA;Temperature&#xD;&#xA;"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="703" Canvas.Top="465" FontSize="18" Click="b3_Copy4_Click" />
+            <Button x:Name="b3_Copy5" Content="Decrease&#xD;&#xA;Temperature&#xD;&#xA;"  Width="200" Height="200" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="939" Canvas.Top="465" FontSize="18" />
         </Canvas>
 
     </Grid>
