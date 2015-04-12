@@ -74,6 +74,9 @@
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\HomeAutomationPage.xbf">
+      <PackagePath>HomeAutomationPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpressCustomSettings.xbf">
       <PackagePath>iExpressCustomSettings.xbf</PackagePath>
     </AppxPackagedFile>

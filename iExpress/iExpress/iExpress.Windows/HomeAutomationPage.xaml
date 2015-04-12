@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="iExpress.HomeAutomationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:iExpress"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="b1" Content="Switch 1: ON"  Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="61,32,0,586" />
+        <Button x:Name="b2" Content="Switch 1: OFF"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="290,32,0,586"/>
+        <Button x:Name="b3" Content="Switch 2: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="61,192,0,426"/>
+        <Button x:Name="b4" Content="Switch 2: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="290,192,0,426"/>
+        <Button x:Name="b5" Content="Switch 3: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="61,352,0,266"/>
+        <Button x:Name="b6" Content="Switch 3: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="290,352,0,266"/>
+        <Button x:Name="b7" Content="Switch 4: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="61,510,0,108"/>
+        <Button x:Name="b8" Content="Switch 4: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="290,510,0,108"/>
+        <RichTextBlock FontSize="18" Margin="589,35,354,707">
+            <Paragraph>
+                <Run Text="Current Temperature:"/>
+            </Paragraph>
+        </RichTextBlock>
+        <RichTextBlock x:Name="tempDisplayBox" FontSize="90" TextAlignment="Right" Margin="589,75,354,603">
+            <Paragraph>
+                <Run Text="72"/>
+            </Paragraph>
+        </RichTextBlock>
+        <Button x:Name="b9" Content="Increase Temp"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="586,192,0,426"/>
+        <Button x:Name="b10" Content="Decrease Temp" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="815,192,0,426"/>
+        <Button x:Name="b11" Content="Update Temp"  Width="429" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="586,352,0,266"/>
+        <Button x:Name="b12" Content="Return to Main Menu" Width="423" Height="147" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Margin="589,510,0,111" />
+
+    </Grid>
+</Page>

@@ -109,6 +109,9 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="HomeAutomationPage.xaml.cs">
+      <DependentUpon>HomeAutomationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iExpressCustomSettings.xaml.cs">
       <DependentUpon>iExpressCustomSettings.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="HomeAutomationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iExpressCustomSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -230,22 +230,19 @@ namespace iExpress
                     else
                         UserName = "Patient";
 
-                    Debug.WriteLine("Trigger execution!!!!!!!!");
+                    Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
+                    String message = but.Content.ToString();
 
-                    if ((sender as Windows.UI.Xaml.Controls.Button).Content.ToString() == "Hungry")
+
+                    if (message == "Home Automation")
                     {
-                        //Frame.Navigate(typeof(HomeAutomation), null);
-                        
-                        
-                        //Frame.Navigate(typeof(HomeAutomation), null);
-                                  
+                        but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                        ContentFrame.Navigate(typeof(HomeAutomationPage));
                     }
                     else
                     {
-
-                        (sender as Windows.UI.Xaml.Controls.Button).Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
-                        Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
-                        String message = but.Content.ToString();
+                        Debug.WriteLine("Trigger execution!!!!!!!!");
+                        but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
 
                         ParsePush push = new ParsePush();
                         push.Channels = new List<String> { "global" };
@@ -265,7 +262,6 @@ namespace iExpress
                         entered = false;
                         exited = true;
                     }
-
                 }
             }
 

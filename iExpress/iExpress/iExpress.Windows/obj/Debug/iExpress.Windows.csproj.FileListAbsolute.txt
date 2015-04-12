@@ -221,7 +221,6 @@ C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototypin
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\Newtonsoft.Json.xml
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\Parse.xml
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\Parse.WinRT.xml
-C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpress.Windows.csprojResolveAssemblyReference.cache
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\App.g.i.cs
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\App.g.cs
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpressCustomSettings.g.i.cs
@@ -251,3 +250,8 @@ C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototypin
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\HomeAutomationPage.xbf
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.g.i.cs
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.g.cs
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.xaml
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.xbf
