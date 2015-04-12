@@ -102,6 +102,9 @@ namespace iExpress
             buttons.Add(new ButtonHandler(this.b4));
             buttons.Add(new ButtonHandler(this.b5));
             buttons.Add(new ButtonHandler(this.b6));
+            buttons.Add(new ButtonHandler(this.b7));
+            buttons.Add(new ButtonHandler(this.b8));
+            buttons.Add(new ButtonHandler(this.b9));
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
@@ -438,17 +441,6 @@ namespace iExpress
                
             
         }
-
-        private void b3_Copy3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void b3_Copy4_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
 
     
     }
