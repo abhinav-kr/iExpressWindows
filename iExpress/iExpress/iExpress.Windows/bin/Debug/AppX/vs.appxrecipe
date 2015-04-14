@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.exe">
       <PackagePath>iExpress.Windows.exe</PackagePath>
-      <Modified>2015-04-12T20:15:00.303</Modified>
+      <Modified>2015-04-13T04:56:01.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -110,11 +110,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-12T20:14:59.975</Modified>
+      <Modified>2015-04-13T04:56:01.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.xr.xml">
       <PackagePath>iExpress.Windows.xr.xml</PackagePath>
-      <Modified>2015-04-12T20:13:55.380</Modified>
+      <Modified>2015-04-13T04:56:01.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -29,6 +29,9 @@ using Windows.UI.Core;
 using Windows.ApplicationModel.Core;
 using Windows.System.Threading;
 using Windows.Networking.PushNotifications;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Formatting;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -302,6 +305,15 @@ namespace iExpress
                     //        }
                     //    }
 
+
+                        HttpClient client = new HttpClient();
+                        client.BaseAddress = new Uri("http://localhost:51093/");
+                        client.DefaultRequestHeaders.Accept.Add(
+                           new MediaTypeWithQualityHeaderValue("application/json"));
+                        
+                        TempUpdate tempUpdate = new TempUpdate("74", "72");
+
+                        var response = client.PostAsJsonAsync("api/AgentCollection", tempUpdate).Result;
 
                     }
                     else

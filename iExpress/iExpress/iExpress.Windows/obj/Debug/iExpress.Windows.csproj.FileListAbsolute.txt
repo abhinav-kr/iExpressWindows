@@ -255,3 +255,4 @@ C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototypin
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.g.cs
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.xaml
 C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\HomeAutomationPage.xbf
+C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpress.Windows.csprojResolveAssemblyReference.cache
