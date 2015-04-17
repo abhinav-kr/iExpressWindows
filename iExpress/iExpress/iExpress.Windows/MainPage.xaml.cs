@@ -239,6 +239,11 @@ namespace iExpress
                         but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
                         ContentFrame.Navigate(typeof(HomeAutomationPage));
                     }
+                    else if (message == "Read")
+                    {
+                        but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                        ContentFrame.Navigate(typeof(ScrollPage));
+                    }
                     else
                     {
                         Debug.WriteLine("Trigger execution!!!!!!!!");
@@ -285,7 +290,7 @@ namespace iExpress
 
             // return in case of 0,0 
             if (x == 0 && y == 0) return;
-
+            Debug.WriteLine("X : " +x +" and Y: "+y);
             determine_Button(x, y);
 
         }

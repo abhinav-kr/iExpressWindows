@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>CVMO-PC</Machine>
-    <WindowsUser>conwu_000</WindowsUser>
+    <Machine>ABHINAV-PC</Machine>
+    <WindowsUser>Abhinav</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>48964dkrew0213.iExpress</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>5F0EF84CBC752D330B4183CF101858C285A8380373D98398B8F89D2DA4E768DB</RegisteredManifestChecksum>
+    <IntermediateOutputPath>C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>2B98DF43055847F40C42627CE0EF04E8D639EA54B4CF78029EA097DE1FC9B8A2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>48964dkrew0213.iExpress_1.1.0.0_neutral__s7dmk8rjx1yzw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>48964dkrew0213.iExpress_s7dmk8rjx1yzw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>48964dkrew0213.iExpress</RegisteredPackageID>
@@ -17,108 +17,132 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-12T20:15:00.658</Modified>
+      <Modified>2015-04-17T09:52:43.686</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.exe">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.exe">
       <PackagePath>iExpress.Windows.exe</PackagePath>
-      <Modified>2015-04-13T04:56:01.888</Modified>
+      <Modified>2015-04-17T10:14:27.420</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2015-04-12T19:58:34.168</Modified>
+      <Modified>2015-04-17T09:17:04.999</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\packages\Parse.1.3.0\lib\netcore45\Parse.dll">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Parse.1.3.0\lib\netcore45\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
-      <Modified>2015-04-12T19:58:34.329</Modified>
+      <Modified>2015-04-17T09:17:05.251</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\packages\Parse.1.3.0\lib\netcore45\Parse.WinRT.dll">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Parse.1.3.0\lib\netcore45\Parse.WinRT.dll">
       <PackagePath>Parse.WinRT.dll</PackagePath>
-      <Modified>2015-04-12T19:58:34.313</Modified>
+      <Modified>2015-04-17T09:17:05.219</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\TETCSharpClient.dll">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+      <Modified>2015-04-17T09:22:56.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+      <Modified>2015-04-17T09:29:05.398</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Microsoft.Net.Http.2.2.29\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+      <Modified>2015-04-17T09:22:56.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\TETCSharpClient.dll">
       <PackagePath>TETCSharpClient.dll</PackagePath>
-      <Modified>2015-04-12T19:58:33.574</Modified>
+      <Modified>2015-04-17T09:17:04.283</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\1.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\1.png">
       <PackagePath>Assets\1.png</PackagePath>
-      <Modified>2015-04-12T19:58:32.972</Modified>
+      <Modified>2015-04-17T09:17:03.665</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\2.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\2.png">
       <PackagePath>Assets\2.png</PackagePath>
-      <Modified>2015-04-12T19:58:32.972</Modified>
+      <Modified>2015-04-17T09:17:03.667</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\3.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\3.png">
       <PackagePath>Assets\3.png</PackagePath>
-      <Modified>2015-04-12T19:58:32.987</Modified>
+      <Modified>2015-04-17T09:17:03.668</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\4.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\4.png">
       <PackagePath>Assets\4.png</PackagePath>
-      <Modified>2015-04-12T19:58:33.003</Modified>
+      <Modified>2015-04-17T09:17:03.670</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\5.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\5.png">
       <PackagePath>Assets\5.png</PackagePath>
-      <Modified>2015-04-12T19:58:33.003</Modified>
+      <Modified>2015-04-17T09:17:03.672</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Dislike.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Dislike.png">
       <PackagePath>Assets\Dislike.png</PackagePath>
-      <Modified>2015-04-12T19:58:33.019</Modified>
+      <Modified>2015-04-17T09:17:03.673</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Like.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Like.png">
       <PackagePath>Assets\Like.png</PackagePath>
-      <Modified>2015-04-12T19:58:33.065</Modified>
+      <Modified>2015-04-17T09:17:03.675</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-12T19:58:33.065</Modified>
+      <Modified>2015-04-17T09:17:03.677</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Sent.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\Sent.png">
       <PackagePath>Assets\Sent.png</PackagePath>
-      <Modified>2015-04-12T19:58:33.065</Modified>
+      <Modified>2015-04-17T09:17:03.680</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-12T19:58:33.081</Modified>
+      <Modified>2015-04-17T09:17:03.682</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-12T19:58:33.081</Modified>
+      <Modified>2015-04-17T09:17:03.683</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-12T19:58:33.081</Modified>
+      <Modified>2015-04-17T09:17:03.685</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\Assets\newyorktimes.jpg">
+      <PackagePath>Assets\newyorktimes.jpg</PackagePath>
+      <Modified>2015-04-17T09:49:08.800</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-12T20:14:59.974</Modified>
+      <Modified>2015-04-17T09:52:42.151</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\HomeAutomationPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\Assets\BlankPage1.xbf">
+      <PackagePath>Assets\BlankPage1.xbf</PackagePath>
+      <Modified>2015-04-17T09:52:42.152</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\HomeAutomationPage.xbf">
       <PackagePath>HomeAutomationPage.xbf</PackagePath>
-      <Modified>2015-04-12T20:14:59.974</Modified>
+      <Modified>2015-04-17T09:52:42.157</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpressCustomSettings.xbf">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpressCustomSettings.xbf">
       <PackagePath>iExpressCustomSettings.xbf</PackagePath>
-      <Modified>2015-04-12T20:14:59.974</Modified>
+      <Modified>2015-04-17T09:52:42.157</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-13T04:56:01.541</Modified>
+      <Modified>2015-04-17T09:52:42.158</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\ScrollPage.xbf">
+      <PackagePath>ScrollPage.xbf</PackagePath>
+      <Modified>2015-04-17T09:52:42.159</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.xr.xml">
       <PackagePath>iExpress.Windows.xr.xml</PackagePath>
-      <Modified>2015-04-13T04:56:01.244</Modified>
+      <Modified>2015-04-17T09:49:18.835</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\conwu_000\OneDrive\Documents\CMU_Work\Spring_15\18-540-Rapid Prototyping\git-repo\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-12T20:15:00.551</Modified>
+      <Modified>2015-04-17T10:13:46.680</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
