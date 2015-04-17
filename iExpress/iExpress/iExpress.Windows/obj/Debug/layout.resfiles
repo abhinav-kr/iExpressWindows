@@ -4,6 +4,7 @@ Assets\3.png
 Assets\4.png
 Assets\5.png
 Assets\Dislike.png
+Assets\Floyd1.mp3
 Assets\Like.png
 Assets\Logo.scale-100.png
 Assets\newyorktimes.jpg
@@ -12,9 +13,9 @@ Assets\SmallLogo.scale-100.png
 Assets\SplashScreen.scale-100.png
 Assets\StoreLogo.scale-100.png
 App.xbf
-Assets\BlankPage1.xbf
 HomeAutomationPage.xbf
 iExpress.Windows.xr.xml
 iExpressCustomSettings.xbf
 MainPage.xbf
+MediaPage.xbf
 ScrollPage.xbf

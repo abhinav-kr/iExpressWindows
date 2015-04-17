@@ -244,6 +244,11 @@ namespace iExpress
                         but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
                         ContentFrame.Navigate(typeof(ScrollPage));
                     }
+                    else if (message == "Audio/Video")
+                    {
+                        but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                        ContentFrame.Navigate(typeof(MediaPage));
+                    }
                     else
                     {
                         Debug.WriteLine("Trigger execution!!!!!!!!");

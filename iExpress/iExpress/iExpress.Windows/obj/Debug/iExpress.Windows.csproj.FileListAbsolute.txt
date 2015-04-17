@@ -275,9 +275,9 @@ C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Win
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ScrollPage.g.cs
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ScrollPage.xaml
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ScrollPage.xbf
-C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\Assets\BlankPage1.xbf
-C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\Assets\BlankPage1.g.i.cs
-C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\Assets\BlankPage1.g.cs
-C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\Assets\BlankPage1.xaml
-C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\Assets\BlankPage1.xbf
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpress.Windows.csprojResolveAssemblyReference.cache
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MediaPage.xbf
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MediaPage.g.i.cs
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MediaPage.g.cs
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MediaPage.xaml
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MediaPage.xbf
