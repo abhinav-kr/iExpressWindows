@@ -8,6 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <MediaElement x:Name="mediaControl" Source="Assets/Floyd1.mp3" HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="414" Margin="294,297,0,0" AreTransportControlsEnabled="True" AudioCategory="BackgroundCapableMedia" />
+        <MediaElement x:Name="mediaControl" Source="Assets/Floyd1.mp3" HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="414" Margin="143,297,0,0" 
+                      AreTransportControlsEnabled="True" AudioCategory="BackgroundCapableMedia" AutoPlay="false"
+                      Stretch="Fill"/>
+        <Button Content="play" HorizontalAlignment="Left" Margin="188,63,0,0" VerticalAlignment="Top" Width="255" Click="play_button_click" Height="69"/>
+        <Button Content="pause" HorizontalAlignment="Left" Margin="188,131,0,0" VerticalAlignment="Top" Width="255" Click="pause_button_click" Height="65"/>
+        <Button Content="stop" HorizontalAlignment="Left" Margin="188,195,0,0" VerticalAlignment="Top" Width="255" Click="stop_button_click" Height="71"/>
     </Grid>
 </Page>

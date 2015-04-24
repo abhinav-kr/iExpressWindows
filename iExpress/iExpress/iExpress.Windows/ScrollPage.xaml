@@ -8,8 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer x:Name="WebImageScroll" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
-            <Image x:Name="WebImage" />
+        <ScrollViewer x:Name="WebImageScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Center" ZoomMode="Enabled" VerticalAlignment="Center">
+            <Image x:Name="WebImage"  Stretch="Uniform"/>
         </ScrollViewer>
     </Grid>
 </Page>

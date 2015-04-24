@@ -25,6 +25,8 @@
       <RootProperty Name="Height" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
       <RootEvent Name="PointerMoved" />
@@ -137,15 +139,21 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="AreTransportControlsEnabled" />
       <RootProperty Name="AudioCategory" />
+      <RootProperty Name="AutoPlay" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="iExpress.MediaPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="VerticalScrollBarVisibility" />
       <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ZoomMode" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Stretch" />
+    </RootType>
     <RootType FullName="iExpress.ScrollPage" />
   </Roots.RootTypes>
 </Roots>

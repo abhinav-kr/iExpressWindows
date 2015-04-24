@@ -31,7 +31,7 @@ namespace iExpress
         private String userName;
         private String content;
 
-
+        public EventHandler buttonPressDetected;
 
         public ButtonHandler(Button button)
         {
@@ -66,7 +66,6 @@ namespace iExpress
                 //Debug.WriteLine("Init_X " + init_x + "  Init_Y " + init_y);
                 //Debug.WriteLine("OUT_X " + out_x + "  OUT_Y " + out_y);
                 //Debug.WriteLine("X  " + x + "     Y= " + y);
-                //Debug.WriteLine("WOWOWOW ::::: we are in the regoin " + this.name);
                 
                 if (entered_button == false && exited_button == true)
                 {
@@ -114,6 +113,16 @@ namespace iExpress
                         await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                         () =>
                         {
+
+                            if(this.button.Name == "b8") 
+                            {
+
+                            }
+                            if (this.button.Name == "b9")
+                            {
+
+                            }
+
                             this.button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
 
                             if(this.button.Name == "b4")

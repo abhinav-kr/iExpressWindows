@@ -12,9 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Core;
 using System.Diagnostics;
 using TETCSharpClient;
 using TETCSharpClient.Data;
+using Windows.Storage.Pickers;
+using Windows.UI.ViewManagement;
+using Windows.Storage.Streams;
+using Windows.Storage;
+using Windows.Media;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
+using Windows.Storage;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -52,30 +62,67 @@ namespace iExpress
             {
                 mediaControl.SetSource(stream, file.ContentType);
 
-                mediaControl.Play();
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                    {
+                        mediaControl.Play();
+                    });
+            
+               // mediaControl.Pause();
+
             }
         }
 
-        public void OnGazeUpdate(GazeData gazeData)
+        public async void OnGazeUpdate(GazeData gazeData)
         {
+            
             var x = (int)Math.Round(gazeData.SmoothedCoordinates.X, 0);
             var y = (int)Math.Round(gazeData.SmoothedCoordinates.Y, 0);
             if (x == 0 & y == 0) return;
             // Invoke thread
             //Dispatcher.BeginInvoke(new Action(() => UpdateUI(x, y)));
-           
-            if (y < 10)
+           // Debug.WriteLine("Gaze data getting x-" + x + " y-" + y);
+            if (y < 500)
             {
-                mediaControl.Play();
+                Debug.WriteLine("Media Control Play triggered!");
+                await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                           () =>
+                           {
+                               play_button_click(this, null);
+                           });
             }
-            else if (y > this.ActualHeight - 10)
+            else if (y > 1500)
             {
-                mediaControl.Pause();
+                Debug.WriteLine("Media Control Pause triggered!");
+                //mediaControl.Pause();
+                await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                            () =>
+                            {
+                                pause_button_click(this, null);
+                            });
             }
+            
         }
 
+        //play the audio file
+        private void play_button_click(object sender, RoutedEventArgs e)
+        {
+            mediaControl.Play();
+        }
+
+        //pause the audio file
+        private void pause_button_click(object sender, RoutedEventArgs e)
+        { 
+           mediaControl.Pause();
+        }
+
+        //stop the audio file
+        private void stop_button_click(object sender, RoutedEventArgs e)
+        {
+            mediaControl.Stop();
+        }
 
     }
+
 
    
 }

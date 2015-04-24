@@ -51,7 +51,7 @@
             <Button x:Name="b8" Content="Read"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="35" FontSize="18"/>
             <Button x:Name="b9" Content="Audio/Video"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="210" FontSize="18"/>
             <Border BorderThickness="2"  BorderBrush="White" Height="747" Canvas.Left="572" Canvas.Top="10" Width="764">
-                <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="747" Canvas.Left="572" Canvas.Top="10" Width="764" FontSize="72" />
+            <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="747" Canvas.Left="572" Canvas.Top="10" Width="764" FontSize="72" />
             </Border>
         </Canvas>
 

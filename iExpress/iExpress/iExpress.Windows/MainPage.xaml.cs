@@ -57,6 +57,8 @@ namespace iExpress
         private ThreadPoolTimer PeriodicTimer = null;
         private int timer_duration = 10000;
 
+        public static MainPage singletonObject;
+
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
@@ -74,6 +76,14 @@ namespace iExpress
             get { return this.navigationHelper; }
         }
 
+        public static MainPage getSingletonObject()
+        {
+            if (singletonObject != null)
+            {
+                return singletonObject;
+            }
+            return null;
+        }
 
         public MainPage()
         {
@@ -96,15 +106,19 @@ namespace iExpress
             this.InitializeComponent();
 
             buttons = new List<ButtonHandler>();
-            buttons.Add(new ButtonHandler(this.b1));
+
+            ButtonHandler b1bh = new ButtonHandler(this.b1);
+            buttons.Add(b1bh);
             buttons.Add(new ButtonHandler(this.b2));
             buttons.Add(new ButtonHandler(this.b3));
             buttons.Add(new ButtonHandler(this.b4));
             buttons.Add(new ButtonHandler(this.b5));
             buttons.Add(new ButtonHandler(this.b6));
             buttons.Add(new ButtonHandler(this.b7));
-            buttons.Add(new ButtonHandler(this.b8));
+            ButtonHandler b8bh = new ButtonHandler(this.b8);
+            buttons.Add(b8bh);
             buttons.Add(new ButtonHandler(this.b9));
+
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
@@ -112,11 +126,33 @@ namespace iExpress
 
             ParsePush.ToastNotificationReceived += updateNotification;
 
+            singletonObject = this;
+
             // initial setup
             updateNotification(null, null);                 
         }
 
+        public async void navToRead(object sender, EventArgs e)
+        {
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                            () =>
+                            {
+                                this.b8.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                                ContentFrame.Navigate(typeof(ScrollPage));
+                            });
+        }
 
+        public void navToHomeAuto()
+        {
+            this.b7.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+            ContentFrame.Navigate(typeof(HomeAutomationPage));
+        }
+
+        public void navToMedia()
+        {
+            this.b9.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+            ContentFrame.Navigate(typeof(MediaPage));
+        }
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -211,6 +247,9 @@ namespace iExpress
         {
             if (entered == true && exited == false)
             {
+                Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
+                String message = but.Content.ToString();
+                Debug.WriteLine("button with message - " + message);
                 running_counter++;
                 if (running_counter == internal_counter)
                 {
@@ -222,7 +261,8 @@ namespace iExpress
 
                 }
 
-                if (counter == 1)
+
+                if (counter <= 1 )
                 {
 
                     if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("UserName"))
@@ -230,8 +270,7 @@ namespace iExpress
                     else
                         UserName = "Patient";
 
-                    Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
-                    String message = but.Content.ToString();
+
 
 
                     if (message == "Home Automation")
@@ -251,7 +290,7 @@ namespace iExpress
                     }
                     else
                     {
-                        Debug.WriteLine("Trigger execution!!!!!!!!");
+                        Debug.WriteLine("Trigger execution!!!!!!!! for button with message - "+message);
                         but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
 
                         ParsePush push = new ParsePush();
@@ -274,7 +313,6 @@ namespace iExpress
                     }
                 }
             }
-
         }
 
 
@@ -299,6 +337,8 @@ namespace iExpress
             determine_Button(x, y);
 
         }
+
+        
 
         private void determine_Button(int x, int y)
         {
