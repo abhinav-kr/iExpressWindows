@@ -103,8 +103,9 @@ namespace iExpress
 
         public HomeAutomationPage()
         {
+            this.InitializeComponent();
 
-            GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
+           // GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
             GazeManager.Instance.AddGazeListener(this);
 
             // Add listener if EyeTribe Server is closed
@@ -116,9 +117,6 @@ namespace iExpress
                 Debug.WriteLine("IsActivated not ");
                 //errorMessage("Eye Tribe Is Not Active.");
             }
-
-
-            this.InitializeComponent();
 
             buttons = new List<ButtonHandler>();
             buttons.Add(new ButtonHandler(this.b1));

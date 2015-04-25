@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-24T14:24:53.889</Modified>
+      <Modified>2015-04-25T02:35:28.488</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.exe">
       <PackagePath>iExpress.Windows.exe</PackagePath>
-      <Modified>2015-04-24T14:24:52.110</Modified>
+      <Modified>2015-04-25T02:44:53.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -118,27 +118,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.094</Modified>
+      <Modified>2015-04-25T02:16:40.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\HomeAutomationPage.xbf">
       <PackagePath>HomeAutomationPage.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.094</Modified>
+      <Modified>2015-04-25T02:16:40.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpressCustomSettings.xbf">
       <PackagePath>iExpressCustomSettings.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.095</Modified>
+      <Modified>2015-04-25T02:16:40.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.095</Modified>
+      <Modified>2015-04-25T02:16:40.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MediaPage.xbf">
       <PackagePath>MediaPage.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.096</Modified>
+      <Modified>2015-04-25T02:16:40.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\ScrollPage.xbf">
       <PackagePath>ScrollPage.xbf</PackagePath>
-      <Modified>2015-04-24T14:24:51.096</Modified>
+      <Modified>2015-04-25T02:16:40.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.xr.xml">
       <PackagePath>iExpress.Windows.xr.xml</PackagePath>
@@ -146,7 +146,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-24T14:24:53.489</Modified>
+      <Modified>2015-04-25T02:35:28.370</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -41,7 +41,7 @@ namespace iExpress
             GazeManager.Instance.AddGazeListener(this);
            // mediaControl.Source =  new Uri("msappx:///Assets/Floyd1.mp3");
             //SetLocalMedia();
-            mediaControl.Play();
+            //mediaControl.Play();
         }
 
         async private void SetLocalMedia()

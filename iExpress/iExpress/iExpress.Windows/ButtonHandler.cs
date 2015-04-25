@@ -14,6 +14,15 @@ using Windows.UI.Xaml.Media.Imaging;
         //
 namespace iExpress
 {
+    public class ButtonEventArgs : EventArgs
+    {
+        public string Data { get; set; }
+        public ButtonEventArgs(string data)
+        {
+            Data = data;
+        }
+    }
+
     class ButtonHandler
     {
         private Button button = null;
@@ -31,7 +40,7 @@ namespace iExpress
         private String userName;
         private String content;
 
-        public EventHandler buttonPressDetected;
+        public EventHandler<ButtonEventArgs> buttonPressDetected;
 
         public ButtonHandler(Button button)
         {
@@ -78,7 +87,7 @@ namespace iExpress
                     }
                     else
                     {
-                        counter = 6;
+                        counter = 4;
                     }
 
                     running_counter = 0;
@@ -113,14 +122,21 @@ namespace iExpress
                         await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                         () =>
                         {
-
+                            if(this.button.Name == "b7")
+                            {
+                                ButtonEventArgs arg = new ButtonEventArgs("home automation");
+                                buttonPressDetected(this, arg);
+                            }
+                            
                             if(this.button.Name == "b8") 
                             {
-
+                                ButtonEventArgs arg = new ButtonEventArgs("read");
+                                buttonPressDetected(this, arg);
                             }
                             if (this.button.Name == "b9")
                             {
-
+                                ButtonEventArgs arg = new ButtonEventArgs("media");
+                                buttonPressDetected(this, arg);
                             }
 
                             this.button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };

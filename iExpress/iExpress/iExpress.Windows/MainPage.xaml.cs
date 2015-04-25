@@ -114,10 +114,15 @@ namespace iExpress
             buttons.Add(new ButtonHandler(this.b4));
             buttons.Add(new ButtonHandler(this.b5));
             buttons.Add(new ButtonHandler(this.b6));
-            buttons.Add(new ButtonHandler(this.b7));
+            ButtonHandler b7bh = new ButtonHandler(this.b7);
+            b7bh.buttonPressDetected += buttonPressedOnGaze;
+            buttons.Add(b7bh);
             ButtonHandler b8bh = new ButtonHandler(this.b8);
+            b8bh.buttonPressDetected += buttonPressedOnGaze;
             buttons.Add(b8bh);
-            buttons.Add(new ButtonHandler(this.b9));
+            ButtonHandler b9bh = new ButtonHandler(this.b9);
+            b9bh.buttonPressDetected += buttonPressedOnGaze;
+            buttons.Add(b9bh);
 
 
             this.navigationHelper = new NavigationHelper(this);
@@ -132,26 +137,30 @@ namespace iExpress
             updateNotification(null, null);                 
         }
 
-        public async void navToRead(object sender, EventArgs e)
+        public async void buttonPressedOnGaze(object sender, ButtonEventArgs e)
         {
-            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+              await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                             () =>
                             {
-                                this.b8.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
-                                ContentFrame.Navigate(typeof(ScrollPage));
+                                if (e.Data == "media")
+                                {
+                                                  //  this.b9.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                                                    ContentFrame.Navigate(typeof(MediaPage));
+                                }
+                                else if (e.Data == "read")
+                                {
+              
+                                                   // this.b8.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                                                    ContentFrame.Navigate(typeof(ScrollPage));
+
+                                }
+                                else if (e.Data == "home automation")
+                                {
+
+                                                //    this.b7.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
+                                                    ContentFrame.Navigate(typeof(HomeAutomationPage));
+                                }
                             });
-        }
-
-        public void navToHomeAuto()
-        {
-            this.b7.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
-            ContentFrame.Navigate(typeof(HomeAutomationPage));
-        }
-
-        public void navToMedia()
-        {
-            this.b9.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
-            ContentFrame.Navigate(typeof(MediaPage));
         }
 
         /// <summary>
