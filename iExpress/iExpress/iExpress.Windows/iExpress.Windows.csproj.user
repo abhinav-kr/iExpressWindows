@@ -4,9 +4,16 @@
     <AppxShowAllApps>False</AppxShowAllApps>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <RemoteDebugMachine>MPC</RemoteDebugMachine>
-    <UseAuthentication>false</UseAuthentication>
-    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine>RPCS</RemoteDebugMachine>
+    <UseAuthentication>true</UseAuthentication>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <UseSimulator>false</UseSimulator>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <DebugEngines>{3B476D35-A401-11D2-AAD4-00C04F990171}</DebugEngines>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <RemoteDebugMachine>RPCS</RemoteDebugMachine>
+    <UseAuthentication>false</UseAuthentication>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
   </PropertyGroup>
 </Project>

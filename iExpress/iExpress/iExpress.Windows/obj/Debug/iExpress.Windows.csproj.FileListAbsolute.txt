@@ -280,3 +280,4 @@ C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Win
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpress.Windows.csprojResolveAssemblyReference.cache

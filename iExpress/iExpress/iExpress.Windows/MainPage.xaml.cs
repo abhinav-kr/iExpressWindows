@@ -497,6 +497,11 @@ namespace iExpress
             
         }
 
+        private void notification2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     
     }
 

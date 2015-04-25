@@ -8,7 +8,7 @@
     xmlns:common="using:iExpress.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Height="965" Width="1480">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -37,9 +37,9 @@
                 <MenuFlyout/>
             </FlyoutBase.AttachedFlyout>
 
-            <StackPanel Orientation="Vertical" Canvas.Left="64" Canvas.Top="697" Height="200" Width="423">
+            <StackPanel Orientation="Vertical" Canvas.Left="64" Canvas.Top="720" Height="200" Width="423">
                 <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFBC290E" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
-                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
+                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5" TextChanged="notification2_TextChanged"/>
             </StackPanel>
             <Button x:Name="b1" Content="PANIC" Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Top="385" Canvas.Left="54" FontSize="18" />
             <Button x:Name="b3" Content="Bathroom"  Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="54" Canvas.Top="210" FontSize="18" />
@@ -50,8 +50,8 @@
             <Button x:Name="b7" Content="Home Automation" Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="385" FontSize="18" />
             <Button x:Name="b8" Content="Read"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="35" FontSize="18"/>
             <Button x:Name="b9" Content="Audio/Video"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="210" FontSize="18"/>
-            <Border BorderThickness="2"  BorderBrush="White" Height="747" Canvas.Left="572" Canvas.Top="10" Width="764">
-            <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="747" Canvas.Left="572" Canvas.Top="10" Width="764" FontSize="72" />
+            <Border BorderThickness="2"  BorderBrush="White" Height="900" Canvas.Left="572" Canvas.Top="10" Width="850">
+                <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="900" Canvas.Left="572" Canvas.Top="10" Width="850" FontSize="72" />
             </Border>
         </Canvas>
 
