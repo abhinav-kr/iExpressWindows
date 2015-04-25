@@ -8,23 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="b1" Content="Switch 1: ON"  Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="7,32,0,586" BorderBrush="White"/>
-        <Button x:Name="b2" Content="Switch 1: OFF"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="236,32,0,586" BorderBrush="White"/>
-        <Button x:Name="b3" Content="Switch 2: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="7,192,0,426" BorderBrush="White"/>
-        <Button x:Name="b4" Content="Switch 2: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="236,192,0,426" BorderBrush="White"/>
-        <Button x:Name="b5" Content="Switch 3: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="7,352,0,266" BorderBrush="White"/>
-        <Button x:Name="b6" Content="Switch 3: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="236,352,0,266" BorderBrush="White"/>
-        <Button x:Name="b7" Content="Switch 4: ON"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="7,510,0,108" BorderBrush="White"/>
-        <Button x:Name="b8" Content="Switch 4: OFF" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="236,510,0,108" BorderBrush="White"/>
+        <Button x:Name="b1" Content="Switch 1: ON"  Width="227" Height="163" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,82,0,655" BorderBrush="White"/>
+        <Button x:Name="b2" Content="Switch 1: OFF"  Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,82,0,655" BorderBrush="White"/>
+        <Button x:Name="b3" Content="Switch 2: ON"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,256,0,481" BorderBrush="White"/>
+        <Button x:Name="b4" Content="Switch 2: OFF" Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,256,0,481" BorderBrush="White"/>
+        <Button x:Name="b5" Content="Switch 3: ON"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,430,0,307" BorderBrush="White"/>
+        <Button x:Name="b6" Content="Switch 3: OFF" Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,430,0,307" BorderBrush="White"/>
+        <Button x:Name="b7" Content="Switch 4: ON"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,602,0,135" BorderBrush="White"/>
+        <Button x:Name="b8" Content="Switch 4: OFF" Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,602,0,135" BorderBrush="White"/>
         <!--<TextBlock HorizontalAlignment="Left" Margin="467,35,705,707" TextWrapping="Wrap" Text="Current Temperature:" VerticalAlignment="Top" Height="20" Width="199"  FontSize="18" />
         <TextBlock x:Name="displayBox" HorizontalAlignment="Left" Margin="467,75,705,603" TextWrapping="Wrap" Text="72" VerticalAlignment="Top" Height="90" Width="199"  FontSize="90" TextAlignment="Right" />-->
-        <Button x:Name="b9" Content="Increase Temp"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="464,192,0,426"/>
-        <Button x:Name="b10" Content="Decrease Temp" Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="464,352,0,266"/>
-        <Button x:Name="b11" Content="Update Temp"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="464,510,0,108"/>
-        <Button Content="Current:"  Width="100" Height="41" FontSize="18" Margin="464,32,0,695" HorizontalContentAlignment="Left"/>
-        <Button x:Name="currTemp" Content="--"  Width="98" Height="110" FontSize="60" Margin="466,72,0,586" HorizontalContentAlignment="Right" />
-        <Button Content="Target:"  Width="100" Height="41" FontSize="18" Margin="563,32,0,695" HorizontalContentAlignment="Left"/>
-        <Button x:Name="targetTemp" Content="--"  Width="101" Height="110" FontSize="60" Margin="563,72,0,586" HorizontalContentAlignment="Right" />
+        <Button x:Name="b9" Content="Increase Temp"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="566,256,0,481"/>
+        <Button x:Name="b10" Content="Decrease Temp" Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="566,430,0,307"/>
+        <Button x:Name="b11" Content="Update Temp"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="566,602,0,135"/>
+        <Button Content="Current:"  Width="113" Height="45" FontSize="18" Margin="566,82,0,773" HorizontalContentAlignment="Left"/>
+        <Button x:Name="currTemp" Content="--"  Width="111" Height="119" FontSize="60" Margin="568,126,0,655" HorizontalContentAlignment="Right" />
+        <Button Content="Target:"  Width="114" Height="45" FontSize="18" Margin="678,82,0,773" HorizontalContentAlignment="Left"/>
+        <Button x:Name="targetTemp" Content="--"  Width="115" Height="119" FontSize="60" Margin="678,126,0,655" HorizontalContentAlignment="Right" />
 
 
 
