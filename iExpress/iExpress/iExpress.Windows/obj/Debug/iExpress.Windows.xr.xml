@@ -27,24 +27,14 @@
       <RootProperty Name="Height" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
       <RootEvent Name="PointerMoved" />
       <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RichTextBlock">
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Blocks" />
-      <RootProperty Name="TextAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Paragraph">
-      <RootProperty Name="Inlines" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="iExpress.HomeAutomationPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.SettingsFlyout">
@@ -92,6 +82,7 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="BorderThickness" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="iExpress.iExpressCustomSettings" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">

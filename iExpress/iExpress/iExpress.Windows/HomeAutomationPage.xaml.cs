@@ -31,7 +31,9 @@ using Windows.System.Threading;
 using Windows.Networking.PushNotifications;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Http.Formatting;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -43,6 +45,8 @@ namespace iExpress
     /// </summary>
     public sealed partial class HomeAutomationPage : Page, IGazeListener, IConnectionStateListener, ITrackerStateListener
     {
+        #region initialized variables
+
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -53,35 +57,47 @@ namespace iExpress
         private int running_counter;
         private String UserName;
         private List<ButtonHandler> buttons = null;
+        private int runningTemp;
+        private static String dbTemp;
+        public static Dictionary<string, string> tagIds;
 
         // This will be used when the eye tribe is disconnected
         private ThreadPoolTimer PeriodicTimer = null;
         private int timer_duration = 10000;
 
-        private class TempUpdate
-        {
-            private string new_temp;
-            private string curr_temp;
+        #endregion
 
-            public TempUpdate(string newTemp, string currTemp)
-            {
-                this.new_temp = newTemp;
-                this.curr_temp = currTemp;
-            }
+        #region defined classes
+
+        //private class TempUpdate
+        //{
+        //    public string new_temp { get; set; }
+        //    public string curr_temp { get; set; }
+        //}
+
+
+        //private class SwitchUpdate
+        //{
+        //    public string switch_to_change { get; set; }
+        //    public string new_switch_status { get; set; }
+        //}
+
+        private class ComponentUpdate
+        {
+            public string tag_id { get; set; }
+            public string required_value { get; set; }
         }
 
-        private class SwitchUpdate
+        private class DBResponse
         {
-            private string switch_to_change;
-            private string new_switch_status;
-
-            public SwitchUpdate(string switchToChange, string switchStatus)
-            {
-                this.switch_to_change = switchToChange;
-                this.new_switch_status = switchStatus;
-            }
+            public int id { get; set; }
+            public string user_name { get; set; }
+            public string tag_id { get; set; }
+            public string signal_type { get; set; }
+            public string current_value { get; set; }
+            public string required_value { get; set; }
+            public string mode { get; set; }
         }
-
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -100,12 +116,12 @@ namespace iExpress
             get { return this.navigationHelper; }
         }
 
+        #endregion
 
         public HomeAutomationPage()
         {
-            this.InitializeComponent();
 
-           // GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
+            //GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
             GazeManager.Instance.AddGazeListener(this);
 
             // Add listener if EyeTribe Server is closed
@@ -117,6 +133,9 @@ namespace iExpress
                 Debug.WriteLine("IsActivated not ");
                 //errorMessage("Eye Tribe Is Not Active.");
             }
+
+
+            this.InitializeComponent();
 
             buttons = new List<ButtonHandler>();
             buttons.Add(new ButtonHandler(this.b1));
@@ -130,12 +149,99 @@ namespace iExpress
             buttons.Add(new ButtonHandler(this.b9));
             buttons.Add(new ButtonHandler(this.b10));
             buttons.Add(new ButtonHandler(this.b11));
-            buttons.Add(new ButtonHandler(this.b12));
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
+            /* Initialize dictionary for switch & thermostat tag IDs */
+            tagIds = new Dictionary<string, string>();
+            tagIds.Add("1", "115914");
+            tagIds.Add("2", "115498");
+            tagIds.Add("3", "115341");
+            tagIds.Add("4", "1155B6");
+            tagIds.Add("temp", "11B264");
+
+            /* Initialize temperature variables and display */
+            runningTemp = 0;
+            runningTemp = loadCurrTemp();
+            currTemp.Content = runningTemp.ToString();
         }
+
+        private int loadCurrTemp()
+        {
+            dbTemp = "0";
+
+            // Get current temp with API call
+            string tagID = "";
+            tagIds.TryGetValue("temp", out tagID);
+            DBResponse responseObject = GetRequest(tagID);
+
+            // Set the current temperature to the server's current_value
+            dbTemp = convertTempH2I(responseObject.current_value);
+
+            // Parse Temp to int
+            int tempAsInt = 0;
+            Boolean success = int.TryParse(dbTemp, out tempAsInt);
+            if (!success) 
+            {
+                tempAsInt = 0;
+                Debug.WriteLine("Could not parse temperature from database. Value received = {0}", dbTemp);
+                currTemp.Content = "Err";
+            }
+            else if (!tempInRange(tempAsInt))
+            {
+                tempAsInt = 0;
+                Debug.WriteLine("Temperature from database out of range.", dbTemp);
+                currTemp.Content = "Err";
+            }
+
+            return tempAsInt;
+        }
+
+        private Boolean tempInRange(int temp)
+        {
+            if (temp < 5 || temp > 90)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /* Convert the hex string from the database response 
+         * with the formula: 
+         * hex string => int value => int/2 => int/2 string
+         */
+        private string convertTempH2I(string hexString)
+        {
+            // Convert directly from a hex string to an int
+            Int32 tempVar = Int32.Parse(hexString, System.Globalization.NumberStyles.HexNumber);
+
+            return (tempVar/2).ToString();
+        }
+
+        /* Convert the hex string from the database response 
+         * with the formula: 
+         * int string => int value => int*2 => convert int*2 to 2-digit hex string
+         */
+        private string convertTempI2H(string intString)
+        {
+            // Parse intString to int
+            int intVal;
+            Boolean success = int.TryParse(intString, out intVal);
+            if (!success)
+            {
+                intVal = 0;
+                Debug.WriteLine("Parsing error in convertTempI2H");
+            }
+
+            Int32 tempVar = (Int32)(intVal * 2);
+            
+            // Convert to a 2-digit hex string
+            return tempVar.ToString("x2");
+        }
+
+        #region unused code
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -187,9 +293,12 @@ namespace iExpress
 
         #endregion
 
+        #endregion
         private void mouseEntered(object sender, PointerRoutedEventArgs e)
         {
 
+            Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
+            String message = but.Content.ToString();
 
 
             Debug.WriteLine(sender.GetHashCode() + "Detected the entering of the button");
@@ -197,12 +306,15 @@ namespace iExpress
 
             entered = true;
             exited = false;
-            //counter = 6;
-            //Abhi - Testing if CountDown Testing Works 
+
             if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("CountDown"))
             {
                 counter = (int)ApplicationData.Current.RoamingSettings.Values["CountDown"];
                 counter++;
+            }
+            else if (message == "Increase Temp" || message == "Decrease Temp")
+            {
+                counter = 3;
             }
             else
             {
@@ -211,8 +323,6 @@ namespace iExpress
 
             running_counter = 0;
         }
-
-
 
         private void mouseExited(object sender, PointerRoutedEventArgs e)
         {
@@ -249,84 +359,172 @@ namespace iExpress
                     Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
                     String message = but.Content.ToString();
 
+                    Debug.WriteLine("Trigger execution!!!!!!!!");
+                    but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
 
-                    if (message != "Return to Main Menu")
+                    if (message == "Increase Temp")
                     {
-                        //Debug.WriteLine("Trigger execution!!!!!!!!");
-                        //but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
+                        runningTemp++;
+                        String displayTemp = runningTemp.ToString();
 
-                        //ParsePush push = new ParsePush();
-                        //push.Channels = new List<String> { "global" };
-                        //IDictionary<string, object> dic = new Dictionary<string, object>();
-                        //dic.Add("sound", ".");
-                        //dic.Add("alert", UserName + ": " + message);
-                        //// dic.Add("time", UserName);
-                        //push.Data = dic;
-                        //push.SendAsync();
-
-
-                        //ParseObject internal_tweets = new ParseObject("TweetsInternal");
-                        //internal_tweets["content"] = message;
-                        //internal_tweets["sender"] = UserName;
-                        //internal_tweets.SaveAsync();
-
-                        //entered = false;
-                        //exited = true;
-
-                        /////////////////////////////////////////////////////
-
-                        //Create an object for the request
-
-                    //    TempUpdate tempJson = new TempUpdate("72", "72");
-                    //    string jsonString = JsonHelper.JsonSerializer<TempUpdate>(tempJson);
-
-                    //    var httpWebRequest = (HttpWebRequest)WebRequest.Create("");
-                    //    httpWebRequest.ContentType = "text/json";
-                    //    httpWebRequest.Method = "POST";
-
-                    //    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                    //    {
-                    //        string json = new JavaScriptSerializer().Serialize(new
-                    //        {
-                    //            user = "72",
-                    //            password = "74"
-                    //        });
-
-                    //        streamWriter.Write(json);
-                    //        streamWriter.Flush();
-                    //        streamWriter.Close();
-
-                    //        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                    //        using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                    //        {
-                    //            var result = streamReader.ReadToEnd();
-                    //        }
-                    //    }
-
-
-                        HttpClient client = new HttpClient();
-                        client.BaseAddress = new Uri("http://localhost:51093/");
-                        client.DefaultRequestHeaders.Accept.Add(
-                           new MediaTypeWithQualityHeaderValue("application/json"));
-                        
-                        TempUpdate tempUpdate = new TempUpdate("74", "72");
-
-                        var response = client.PostAsJsonAsync("api/AgentCollection", tempUpdate).Result;
-
+                        targetTemp.Content = displayTemp;
                     }
-                    else
+                    else if (message == "Decrease Temp")
                     {
-                        but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Navigating.png")) };
-                        this.Frame.Navigate(typeof(MainPage));
+                        runningTemp--;
+                        String displayTemp = runningTemp.ToString();
+
+                        targetTemp.Content = displayTemp;
+                    }
+                    else if (message == "Update Temp")
+                    {
+                        String displayTemp = runningTemp.ToString();
+
+                        string tagId = "";
+                        tagIds.TryGetValue("temp", out tagId);
+                        ComponentUpdate tempUpdate = new ComponentUpdate
+                        {
+                            tag_id = tagId,
+                            required_value = convertTempI2H(displayTemp)
+                        };
+
+                        // Send request with this data as the POST body
+                        bool successCode = PutRequest(tempUpdate);
+
+                        if (successCode)
+                        {
+                            // Update the current temperature box on page to match displayTemp
+                            currTemp.Content = displayTemp;
+                        }
+                        else
+                        {
+                            Debug.WriteLine("Server error occurred while trying to update temperature.");
+                            currTemp.Content = "Err";
+                        }
+                    }
+                    else                     
+                    {
+                        //THIS IS A SWITCH ON/OFF BUTTON
+
+                        // Index of the switch number in the button's Content field
+                        int numIndex = 7;
+                        string switchNum = message.Substring(numIndex,1);
+                        string tagId = "";
+
+                        //message.Substring takes the switch number from the button
+                        // 1 corresponds to increase
+                        // 0 corresponds to decrease
+                        if (message.Contains("ON"))
+                        {
+                            // Get tagID from dictionary
+                            tagIds.TryGetValue(switchNum, out tagId);
+
+                            ComponentUpdate switchUpdate = new ComponentUpdate
+                            {
+                                tag_id = tagId,
+                                required_value = "1"
+                            };
+
+                            // Send request with this data as the POST body
+                            PutRequest(switchUpdate);
+
+                        }
+                        else if (message.Contains("OFF"))
+                        {
+                            // Get tagID from dictionary
+                            tagIds.TryGetValue(switchNum, out tagId);
+
+                            ComponentUpdate switchUpdate = new ComponentUpdate
+                            {
+                                tag_id = tagId,
+                                required_value = "0"
+                            };
+
+                            // Send request with this data as the POST body
+                            PutRequest(switchUpdate); 
+                        }
                     }
 
+                    entered = false;
+                    exited = true;
                 }
             }
-
         }
 
 
+        private static bool PutRequest(ComponentUpdate updateObject)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://128.2.83.208:8001/");
+                client.DefaultRequestHeaders.Accept.Clear();
 
+                // First make a get request to obtain the current state of the server for this component
+                DBResponse responseObject = GetRequest(updateObject.tag_id);
+
+                // Now set the required value to your updated required_value
+                responseObject.required_value = updateObject.required_value;
+
+                // Serialize this to JSON
+                string jsonObject = JsonConvert.SerializeObject(responseObject);
+                Debug.WriteLine("This is the response object I retrieved:");
+                Debug.WriteLine(jsonObject);
+
+                // Convert jsonObject to HttpContent for the request
+                HttpContent content = new StringContent(jsonObject);
+                content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+
+                // Make a PUT request to the REST server and return response
+                // .Result forces this async call to wait until response terminates before it returns
+                HttpResponseMessage response = client.PutAsync("api/v1/homeautomation/ha_user", content).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Unsuccessful PUT request!!!!");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        
+        private static DBResponse GetRequest(String tagId)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://128.2.83.208:8001/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Makes a GET request to the REST server and returns response body as string
+                // .Result forces this async call to wait until response terminates before it returns
+                string response = client.GetStringAsync("api/v1/homeautomation/ha_user").Result;
+
+                if (response != "")
+                {
+                    // Deserialize the server response into a list of response objects
+                    Debug.WriteLine(response);
+                    List<DBResponse> dbResponseList = JsonConvert.DeserializeObject<List<DBResponse>>(response);
+                    Debug.WriteLine("Got the response objects. Printing them now...");
+
+                    Debug.WriteLine("My tagId is {0}", tagId);
+
+                    foreach (DBResponse resp in dbResponseList)
+                    {
+                        Debug.WriteLine(resp.tag_id);
+
+                        if (resp.tag_id == tagId)
+                        {
+                            return resp;
+                        }
+                    }
+                }
+                return new DBResponse();
+            }
+        }
+
+        
+        #region backing functions
 
         public void OnGazeUpdate(GazeData gazeData)
         {
@@ -493,5 +691,6 @@ namespace iExpress
             //});
 
         }
+        #endregion
     }
 }

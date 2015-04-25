@@ -4,7 +4,7 @@
     <AppxShowAllApps>False</AppxShowAllApps>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <RemoteDebugMachine>RPCS</RemoteDebugMachine>
+    <RemoteDebugMachine>192.168.43.11:4018 (RPCS)</RemoteDebugMachine>
     <UseAuthentication>true</UseAuthentication>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <UseSimulator>false</UseSimulator>
