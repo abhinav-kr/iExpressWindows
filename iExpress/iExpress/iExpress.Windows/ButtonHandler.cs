@@ -41,6 +41,7 @@ namespace iExpress
         private String content;
 
         public EventHandler<ButtonEventArgs> buttonPressDetected;
+        public EventHandler<ButtonEventArgs> homeAutomationControl;
 
         public ButtonHandler(Button button)
         {
@@ -122,6 +123,12 @@ namespace iExpress
                         await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                         () =>
                         {
+                            if (this.button.Name == "b21" || this.button.Name == "b22" || this.button.Name == "b23" || this.button.Name == "b24" || this.button.Name == "b25" || this.button.Name == "b26" || this.button.Name == "b27" || this.button.Name == "b28" || this.button.Name == "b29" || this.button.Name == "b30" || this.button.Name == "b31" || this.button.Name == "b32")
+                            {
+                                ButtonEventArgs arg = new ButtonEventArgs(this.button.Name);
+                                homeAutomationControl(this.button, arg);
+                            }
+
                             if(this.button.Name == "b7")
                             {
                                 ButtonEventArgs arg = new ButtonEventArgs("home automation");

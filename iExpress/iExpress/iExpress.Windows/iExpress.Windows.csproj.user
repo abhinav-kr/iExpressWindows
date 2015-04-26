@@ -6,7 +6,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <RemoteDebugMachine>192.168.43.11:4018 (RPCS)</RemoteDebugMachine>
     <UseAuthentication>true</UseAuthentication>
-    <RemoteDebugEnabled>true</RemoteDebugEnabled>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
     <UseSimulator>false</UseSimulator>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <DebugEngines>{3B476D35-A401-11D2-AAD4-00C04F990171}</DebugEngines>

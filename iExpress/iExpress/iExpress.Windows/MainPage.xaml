@@ -50,10 +50,9 @@
             <Button x:Name="b7" Content="Home Automation" Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="385" FontSize="18" />
             <Button x:Name="b8" Content="Read"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="35" FontSize="18"/>
             <Button x:Name="b9" Content="Audio/Video"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="310" Canvas.Top="210" FontSize="18"/>
-            <Border BorderThickness="2"  BorderBrush="White" Height="900" Canvas.Left="572" Canvas.Top="10" Width="850">
-                <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="900" Canvas.Left="572" Canvas.Top="10" Width="850" FontSize="72" />
-            </Border>
+            <Frame x:Name="ContentFrame" Content="  Welcome to iExpress!" Height="900" Canvas.Left="572" Canvas.Top="10" Width="850" FontSize="72" BorderBrush="White" BorderThickness="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Canvas>
+        <ContentPresenter HorizontalAlignment="Left" Height="100" Margin="3265,214,-1885,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

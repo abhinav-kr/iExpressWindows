@@ -138,17 +138,40 @@ namespace iExpress
             this.InitializeComponent();
 
             buttons = new List<ButtonHandler>();
-            buttons.Add(new ButtonHandler(this.b1));
-            buttons.Add(new ButtonHandler(this.b2));
-            buttons.Add(new ButtonHandler(this.b3));
-            buttons.Add(new ButtonHandler(this.b4));
-            buttons.Add(new ButtonHandler(this.b5));
-            buttons.Add(new ButtonHandler(this.b6));
-            buttons.Add(new ButtonHandler(this.b7));
-            buttons.Add(new ButtonHandler(this.b8));
-            buttons.Add(new ButtonHandler(this.b9));
-            buttons.Add(new ButtonHandler(this.b10));
-            buttons.Add(new ButtonHandler(this.b11));
+
+            ButtonHandler b21bh = new ButtonHandler(this.b21);
+            b21bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b21bh);
+            ButtonHandler b22bh = new ButtonHandler(this.b22);
+            b22bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b22bh);
+            ButtonHandler b23bh = new ButtonHandler(this.b23);
+            b23bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b23bh);
+            ButtonHandler b24bh = new ButtonHandler(this.b24);
+            b24bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b24bh);
+            ButtonHandler b25bh = new ButtonHandler(this.b25);
+            b25bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b25bh);
+            ButtonHandler b26bh = new ButtonHandler(this.b26);
+            b26bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b26bh);
+            ButtonHandler b27bh = new ButtonHandler(this.b27);
+            b27bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b27bh);
+            ButtonHandler b28bh = new ButtonHandler(this.b28);
+            b28bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b28bh);
+            ButtonHandler b29bh = new ButtonHandler(this.b29);
+            b29bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b29bh);
+            ButtonHandler b30bh = new ButtonHandler(this.b30);
+            b30bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b30bh);
+            ButtonHandler b31bh = new ButtonHandler(this.b31);
+            b31bh.homeAutomationControl += homeAutomationControlHandler;
+            buttons.Add(b31bh);
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
@@ -166,6 +189,103 @@ namespace iExpress
             runningTemp = 0;
             runningTemp = loadCurrTemp();
             currTemp.Content = runningTemp.ToString();
+        }
+
+        public async void homeAutomationControlHandler(object sender, ButtonEventArgs e)
+        {
+            Windows.UI.Xaml.Controls.Button but = (sender as Windows.UI.Xaml.Controls.Button);
+            String message = but.Content.ToString();
+
+
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                           () =>
+                           {
+                               Debug.WriteLine("Trigger execution!!!!!!!!");
+                               but.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Sent.png")) };
+
+                               if (message == "Increase Temp")
+                               {
+                                   runningTemp++;
+                                   String displayTemp = runningTemp.ToString();
+
+                                   targetTemp.Content = displayTemp;
+                               }
+                               else if (message == "Decrease Temp")
+                               {
+                                   runningTemp--;
+                                   String displayTemp = runningTemp.ToString();
+
+                                   targetTemp.Content = displayTemp;
+                               }
+                               else if (message == "Update Temp")
+                               {
+                                   String displayTemp = runningTemp.ToString();
+
+                                   string tagId = "";
+                                   tagIds.TryGetValue("temp", out tagId);
+                                   ComponentUpdate tempUpdate = new ComponentUpdate
+                                   {
+                                       tag_id = tagId,
+                                       required_value = convertTempI2H(displayTemp)
+                                   };
+
+                                   // Send request with this data as the POST body
+                                   bool successCode = PutRequest(tempUpdate);
+
+                                   if (successCode)
+                                   {
+                                       // Update the current temperature box on page to match displayTemp
+                                       currTemp.Content = displayTemp;
+                                   }
+                                   else
+                                   {
+                                       Debug.WriteLine("Server error occurred while trying to update temperature.");
+                                       currTemp.Content = "Err";
+                                   }
+                               }
+                               else
+                               {
+                                   //THIS IS A SWITCH ON/OFF BUTTON
+
+                                   // Index of the switch number in the button's Content field
+                                   int numIndex = 7;
+                                   string switchNum = message.Substring(numIndex, 1);
+                                   string tagId = "";
+
+                                   //message.Substring takes the switch number from the button
+                                   // 1 corresponds to increase
+                                   // 0 corresponds to decrease
+                                   if (message.Contains("ON"))
+                                   {
+                                       // Get tagID from dictionary
+                                       tagIds.TryGetValue(switchNum, out tagId);
+
+                                       ComponentUpdate switchUpdate = new ComponentUpdate
+                                       {
+                                           tag_id = tagId,
+                                           required_value = "1"
+                                       };
+
+                                       // Send request with this data as the POST body
+                                       PutRequest(switchUpdate);
+
+                                   }
+                                   else if (message.Contains("OFF"))
+                                   {
+                                       // Get tagID from dictionary
+                                       tagIds.TryGetValue(switchNum, out tagId);
+
+                                       ComponentUpdate switchUpdate = new ComponentUpdate
+                                       {
+                                           tag_id = tagId,
+                                           required_value = "0"
+                                       };
+
+                                       // Send request with this data as the POST body
+                                       PutRequest(switchUpdate);
+                                   }
+                               }
+                           });
         }
 
         private int loadCurrTemp()
