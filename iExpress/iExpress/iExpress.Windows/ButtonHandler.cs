@@ -62,6 +62,27 @@ namespace iExpress
 
         }
 
+        public ButtonHandler(Button button, bool correction)
+        {
+            if (correction)
+            {
+                this.button = button;
+                Button but = button;
+
+                var trans = but.TransformToVisual(null);
+                var point = trans.TransformPoint(new Windows.Foundation.Point());
+
+                init_x = point.X + 572;
+                init_y = point.Y + 10;
+                out_x = init_x + button.Width;
+                out_y = init_y + button.Height;
+
+                entered_button = false;
+                name = button.Name.ToString();
+                content = button.Content.ToString();
+            }
+        }
+
         public async void entered(int x, int y)
         {
             //With some analysis we came up with this padding 
@@ -81,38 +102,43 @@ namespace iExpress
                 {
                     //counter = 6;
                     //Abhi - Testing if CountDown Testing Works 
-                    if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("CountDown"))
-                    {
-                        counter = (int)ApplicationData.Current.RoamingSettings.Values["CountDown"];
-                        counter++;
-                    }
-                    else
-                    {
-                        counter = 4;
-                    }
+                    await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                        () =>
+                        {
+                            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("CountDown"))
+                            {
+                                counter = (int)ApplicationData.Current.RoamingSettings.Values["CountDown"];
+                                counter++;
+                            }
+                            else
+                            {
+                                counter = 4;
+                            }
 
-                    running_counter = 0;
-                    entered_button = true;
-                    hover_button = true;
-                    exited_button = false;
+
+                            running_counter = 0;
+                            entered_button = true;
+                            hover_button = true;
+                            exited_button = false;
+                        });
                 }
 
                 else if (entered_button == true && hover_button == true)
                 {
-
-                    running_counter++;
-                    if (running_counter == internal_counter)
-                    {
-                        running_counter = 0;
-                        counter--;
-                        String location = "ms-appx:///Assets/" + counter + ".png";
-                       await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                    await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                         () =>
                         {
-                            this.button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(location)) };
-                        });
-                    }
+                            running_counter++;
+                            if (running_counter == internal_counter)
+                            {
+                                running_counter = 0;
+                                counter--;
+                                String location = "ms-appx:///Assets/" + counter + ".png";
 
+                                this.button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(location)) };
+
+                            }
+                        });
 
                     entered_button = true;
                     hover_button = true;

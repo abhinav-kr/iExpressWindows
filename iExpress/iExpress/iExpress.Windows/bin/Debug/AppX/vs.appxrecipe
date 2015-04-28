@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-26T20:58:15.420</Modified>
+      <Modified>2015-04-28T23:20:50.140</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.exe">
       <PackagePath>iExpress.Windows.exe</PackagePath>
-      <Modified>2015-04-26T20:58:15.190</Modified>
+      <Modified>2015-04-28T23:20:49.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-25T21:33:34.856</Modified>
+      <Modified>2015-04-28T23:20:48.009</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\MediaPage.xbf">
       <PackagePath>MediaPage.xbf</PackagePath>
@@ -142,11 +142,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\iExpress.Windows.xr.xml">
       <PackagePath>iExpress.Windows.xr.xml</PackagePath>
-      <Modified>2015-04-25T21:17:38.185</Modified>
+      <Modified>2015-04-28T23:16:20.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-26T20:58:15.317</Modified>
+      <Modified>2015-04-28T23:20:49.756</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

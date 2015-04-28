@@ -57,21 +57,11 @@ namespace iExpress
 
 
             //WebImageScroll.ChangeView(0, 2000, 1);
-            this.testScroll();
 
             Debug.WriteLine("this.ActualHeight : "+this.ActualHeight + "this.Height: " +this.Height);
 
             //GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
             GazeManager.Instance.AddGazeListener(this);
-        }
-
-        public async void testScroll()
-        {
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                WebImageScroll.ScrollToVerticalOffset(2000.0d);
-                //WebImageScroll.ChangeView(0.0f, 200.0f, 1.0f);
-            });
         }
 
         private async void ScrollTimerTick(object sender, object e)

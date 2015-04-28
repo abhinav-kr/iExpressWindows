@@ -281,3 +281,11 @@ C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Win
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\ProjectArchitectures.txt
 C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\iExpress.Windows.csprojResolveAssemblyReference.cache
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\layout.resfiles
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\layout.resfiles.intermediate
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\Resources.resfiles
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\Resources.resfiles.intermediate
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\pri.resfiles
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\pri.resfiles.intermediate
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\priconfig.xml
+C:\Users\Abhinav\Documents\GitHub\iExpressWindows\iExpress\iExpress\iExpress.Windows\obj\Debug\System.Net.Http.Formatting\priconfig.xml.intermediate

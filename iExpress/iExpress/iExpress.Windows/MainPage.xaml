@@ -38,12 +38,12 @@
             </FlyoutBase.AttachedFlyout>
 
             <StackPanel Orientation="Vertical" Canvas.Left="64" Canvas.Top="720" Height="200" Width="423">
-                <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFBC290E" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5"/>
-                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5" TextChanged="notification2_TextChanged"/>
+                <TextBox x:Name="notification1" Text="Message 1" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFBC290E" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5" IsReadOnly="True"/>
+                <TextBox x:Name="notification2" Text="Message 2" IsHitTestVisible="false" Width="423" HorizontalAlignment="Left" Height="100" FontSize="18" BorderBrush="#FFF3A84C" TextWrapping="Wrap" FontFamily="Segoe UI Emoji" BorderThickness="5" TextChanged="notification2_TextChanged" IsReadOnly="True"/>
             </StackPanel>
             <Button x:Name="b1" Content="PANIC" Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Top="385" Canvas.Left="54" FontSize="18" />
             <Button x:Name="b3" Content="Bathroom"  Width="200" Height="150" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="54" Canvas.Top="210" FontSize="18" />
-            <Button x:Name="b2" Content="Hungry"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="54" Canvas.Top="35" FontSize="18"/>
+            <Button x:Name="b2" Content="Sleepy"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="54" Canvas.Top="35" FontSize="18"/>
             <Button x:Name="b4" Content="Yes"  Width="120" Height="100"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="274" Canvas.Top="585" FontSize="18"/>
             <Button x:Name="b5" Content="No" Width="120" Height="100"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="430" Canvas.Top="585" FontSize="18"/>
             <Button x:Name="b6" Content="Let's Talk"  Width="200" Height="150"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" Canvas.Left="54" Canvas.Top="560" FontSize="18"/>

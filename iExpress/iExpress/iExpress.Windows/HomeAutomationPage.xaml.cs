@@ -139,37 +139,37 @@ namespace iExpress
 
             buttons = new List<ButtonHandler>();
 
-            ButtonHandler b21bh = new ButtonHandler(this.b21);
+            ButtonHandler b21bh = new ButtonHandler(this.b21, true);
             b21bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b21bh);
-            ButtonHandler b22bh = new ButtonHandler(this.b22);
+            ButtonHandler b22bh = new ButtonHandler(this.b22, true);
             b22bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b22bh);
-            ButtonHandler b23bh = new ButtonHandler(this.b23);
+            ButtonHandler b23bh = new ButtonHandler(this.b23, true);
             b23bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b23bh);
-            ButtonHandler b24bh = new ButtonHandler(this.b24);
+            ButtonHandler b24bh = new ButtonHandler(this.b24, true);
             b24bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b24bh);
-            ButtonHandler b25bh = new ButtonHandler(this.b25);
+            ButtonHandler b25bh = new ButtonHandler(this.b25, true);
             b25bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b25bh);
-            ButtonHandler b26bh = new ButtonHandler(this.b26);
+            ButtonHandler b26bh = new ButtonHandler(this.b26, true);
             b26bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b26bh);
-            ButtonHandler b27bh = new ButtonHandler(this.b27);
+            ButtonHandler b27bh = new ButtonHandler(this.b27, true);
             b27bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b27bh);
-            ButtonHandler b28bh = new ButtonHandler(this.b28);
+            ButtonHandler b28bh = new ButtonHandler(this.b28, true);
             b28bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b28bh);
-            ButtonHandler b29bh = new ButtonHandler(this.b29);
+            ButtonHandler b29bh = new ButtonHandler(this.b29, true);
             b29bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b29bh);
-            ButtonHandler b30bh = new ButtonHandler(this.b30);
+            ButtonHandler b30bh = new ButtonHandler(this.b30, true);
             b30bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b30bh);
-            ButtonHandler b31bh = new ButtonHandler(this.b31);
+            ButtonHandler b31bh = new ButtonHandler(this.b31, true);
             b31bh.homeAutomationControl += homeAutomationControlHandler;
             buttons.Add(b31bh);
 
@@ -179,10 +179,12 @@ namespace iExpress
 
             /* Initialize dictionary for switch & thermostat tag IDs */
             tagIds = new Dictionary<string, string>();
-            tagIds.Add("1", "115914");
-            tagIds.Add("2", "115498");
-            tagIds.Add("3", "115341");
-            tagIds.Add("4", "1155B6");
+            tagIds.Add("1", "115914"); // fan
+            //tagIds.Add("2", "115498"); 
+            //tagIds.Add("3", "115341");
+            tagIds.Add("2", "1155B6");
+            tagIds.Add("3", "1155B6"); 
+            tagIds.Add("4", "1155B6"); // light, switch
             tagIds.Add("temp", "11B264");
 
             /* Initialize temperature variables and display */
@@ -298,7 +300,7 @@ namespace iExpress
             DBResponse responseObject = GetRequest(tagID);
 
             // Set the current temperature to the server's current_value
-            dbTemp = convertTempH2I(responseObject.current_value);
+            dbTemp = convertTempH2I(responseObject.required_value);
 
             // Parse Temp to int
             int tempAsInt = 0;
@@ -597,12 +599,14 @@ namespace iExpress
                 // Make a PUT request to the REST server and return response
                 // .Result forces this async call to wait until response terminates before it returns
                 HttpResponseMessage response = client.PutAsync("api/v1/homeautomation/ha_user", content).Result;
+                //client.PutAsync("api/v1/homeautomation/ha_user", content);
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    Debug.WriteLine("Unsuccessful PUT request!!!!");
-                    return false;
-                }
+
+                //if (!response.IsSuccessStatusCode)
+                //{
+                //    Debug.WriteLine("Unsuccessful PUT request!!!!");
+                //    return false;
+                //}
             }
             return true;
         }
@@ -662,7 +666,7 @@ namespace iExpress
             // return in case of 0,0 
             if (x == 0 && y == 0) return;
 
-            determine_Button(x, y);
+            determine_Button(x, y );
 
         }
 
