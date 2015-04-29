@@ -72,10 +72,13 @@ namespace iExpress
                 var trans = but.TransformToVisual(null);
                 var point = trans.TransformPoint(new Windows.Foundation.Point());
 
-                init_x = point.X + 572;
-                init_y = point.Y + 10;
+                init_x = point.X + 572 + 50;
+                init_y = point.Y + 10 + 100;
                 out_x = init_x + button.Width;
                 out_y = init_y + button.Height;
+
+                Debug.WriteLine("Init_X " + init_x + "  Init_Y " + init_y);
+                Debug.WriteLine("OUT_X " + out_x + "  OUT_Y " + out_y);
 
                 entered_button = false;
                 name = button.Name.ToString();
@@ -94,9 +97,8 @@ namespace iExpress
 
             if (init_x <= x && x <= out_x && init_y <= y && y <= out_y)
             {
-                //Debug.WriteLine("Init_X " + init_x + "  Init_Y " + init_y);
-                //Debug.WriteLine("OUT_X " + out_x + "  OUT_Y " + out_y);
-                //Debug.WriteLine("X  " + x + "     Y= " + y);
+
+                Debug.WriteLine("X  " + x + "     Y= " + y);
                 
                 if (entered_button == false && exited_button == true)
                 {

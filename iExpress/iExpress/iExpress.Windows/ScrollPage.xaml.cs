@@ -36,7 +36,7 @@ namespace iExpress
         //private Matrix transfrm;
         private double scrollLevel;
         private bool canScroll;
-        private readonly DispatcherTimer scrollTimer;
+        private DispatcherTimer scrollTimer;
 
         enum Direction { Up = -1, Down = 1, Middle = 0 }
 
@@ -46,22 +46,27 @@ namespace iExpress
         public ScrollPage()
         {
             this.InitializeComponent();
+            //GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
+            GazeManager.Instance.AddGazeListener(this);
+            this.setupTimer();
+        }
 
-            WebImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/newyorktimes.jpg"));
-           // WebImageScroll.ScrollToVerticalOffset(2000);
+        public async void setupTimer()
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                 WebImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/newyorktimes.jpg"));
+               // WebImageScroll.ScrollToVerticalOffset(2000);
 
-            scrollTimer = new DispatcherTimer();
-            scrollTimer.Interval = new TimeSpan(0, 0, 0, 0, 30);
-            scrollTimer.Tick += ScrollTimerTick;
-            scrollTimer.Start();
+                scrollTimer = new DispatcherTimer();
+                scrollTimer.Interval = new TimeSpan(0, 0, 0, 0, 30);
+                scrollTimer.Tick += ScrollTimerTick;
+                scrollTimer.Start();
 
-
+              });
             //WebImageScroll.ChangeView(0, 2000, 1);
 
             Debug.WriteLine("this.ActualHeight : "+this.ActualHeight + "this.Height: " +this.Height);
-
-            //GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
-            GazeManager.Instance.AddGazeListener(this);
         }
 
         private async void ScrollTimerTick(object sender, object e)
@@ -87,11 +92,11 @@ namespace iExpress
                         break;
                 }
                 slevel += delta;
-                if (delta > WebImageScroll.ScrollableHeight)
+                if (slevel > WebImageScroll.ScrollableHeight)
                 {
-                    delta = WebImageScroll.ScrollableHeight;
+                    slevel = WebImageScroll.ScrollableHeight;
                 }
-                else if (delta < 0)
+                else if (slevel < 0)
                 {
                     delta = 0;
                 }
@@ -102,30 +107,28 @@ namespace iExpress
 
         public async void OnGazeUpdate(GazeData gazeData)
         {
-            var x = (int)Math.Round(gazeData.SmoothedCoordinates.X, 0);
-            var y = (int)Math.Round(gazeData.SmoothedCoordinates.Y, 0);
-            if (x == 0 & y == 0) return;
-            // Invoke thread
-            //Dispatcher.BeginInvoke(new Action(() => UpdateUI(x, y)));
 
-            if (y < 500)
-            {
-                curState = Direction.Up;
-            }
-            else if (y > 1500)
-            {
-                curState = Direction.Down;
-            }
-            else
-            {
-                curState = Direction.Middle;
-            }
+        //    await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+        //    {
+                var x = (int)Math.Round(gazeData.SmoothedCoordinates.X, 0);
+                var y = (int)Math.Round(gazeData.SmoothedCoordinates.Y, 0);
+                if (x == 0 & y == 0) return;
+                // Invoke thread
+                //Dispatcher.BeginInvoke(new Action(() => UpdateUI(x, y)));
 
-            /*
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
-                UpdateUI(x, y);
-            });*/
+                if (y < 300)
+                {
+                    curState = Direction.Up;
+                }
+                else if (y > 1500)
+                {
+                    curState = Direction.Down;
+                }
+                else
+                {
+                    curState = Direction.Middle;
+                }
+        //    });
         }
 
         private void UpdateUI(int x, int y)

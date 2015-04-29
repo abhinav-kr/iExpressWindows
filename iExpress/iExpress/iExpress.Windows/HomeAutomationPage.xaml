@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="b21" Content="Switch 1: ON"  Width="227" Height="163" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,82,0,655" BorderBrush="White"/>
+        <Button x:Name="b21" Content="Switch 1: ON"  Width="227" Height="163" PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Canvas.Top="405" Canvas.Left="54" BorderBrush="White" Margin="46,82,0,655"/>
         <Button x:Name="b22" Content="Switch 1: OFF"  Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,82,0,655" BorderBrush="White"/>
         <Button x:Name="b23" Content="Switch 2: ON"  Width="227" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="46,256,0,481" BorderBrush="White"/>
         <Button x:Name="b24" Content="Switch 2: OFF" Width="228" Height="163"  PointerEntered="mouseEntered" PointerExited="mouseExited" PointerMoved="mousedMoved" FontSize="18" Margin="306,256,0,481" BorderBrush="White"/>
